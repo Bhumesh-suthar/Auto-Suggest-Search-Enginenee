@@ -1,0 +1,130 @@
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 50px;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Soft pink gradient */
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ffffff; /* White text for contrast */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: fadeInDown 1s ease-out;
+}
+
+input {
+    width: 300px;
+    padding: 12px;
+    font-size: 16px;
+    border: 2px solid #ffffff;
+    border-radius: 25px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+input:focus {
+    border-color: #6c5ce7;
+    box-shadow: 0 0 12px rgba(108, 92, 231, 0.7);
+    background: rgba(255, 255, 255, 1); /* Fully white on focus */
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    width: 300px;
+    margin: 20px auto;
+}
+
+ul li {
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    margin: 8px 0;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.5s ease-out;
+}
+
+ul li:hover {
+    background: rgba(255, 255, 255, 1); /* Fully white on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add a glowing effect to the input on hover */
+input:hover {
+    box-shadow: 0 0 15px rgba(255, 154, 158, 0.6);
+}
+
+/* Add a gradient border effect to the list items */
+ul li {
+    position: relative;
+    overflow: hidden;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    z-index: -1;
+    border-radius: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+ul li:hover::before {
+    opacity: 1;
+}
+
+/* Add a subtle pulse animation to the heading */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+h1 {
+    animation: pulse 2s infinite;
+}
